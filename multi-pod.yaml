@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: my-pod
+
+spec:
+  containers:
+    - name: ghee
+      image: suyashrokade78/ghee:v1.0.2
+      ports:
+        - containerPort: 5656
+  
+  containers:
+    - name: nginx-container
+      image: nginx
+      ports:
+        - containerPort: 80
