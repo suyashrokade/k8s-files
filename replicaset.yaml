@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: suyash-replicaset
+  labels:
+    app: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      web: ngnix
+  template:
+    metadata:
+      labels:
+        web: ngnix
+    spec: # defines the behavior of the pod 
+      containers:
+        - name: nginx-container
+          image: nginx
+          ports:
+            - containerPort: 80
