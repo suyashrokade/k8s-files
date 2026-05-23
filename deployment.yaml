@@ -19,3 +19,4 @@ spec:    #behavior of the replicaset
         image: nginx
         ports:
         - containerPort: 80
+
