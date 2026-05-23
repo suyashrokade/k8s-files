@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ghee
+  name: retail
   labels:
     first: app
 spec:    #behavior of the replicaset 
@@ -15,7 +15,7 @@ spec:    #behavior of the replicaset
         app: web
     spec: # defines the behavior of the pod
       containers:
-      - name: ghee-container
+      - name: retail-container
         image: suyashrokade78/retail:v1.0.0
         ports:
-        - containerPort: 5656
+        - containerPort: 80
