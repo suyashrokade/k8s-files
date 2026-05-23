@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ghee
+  labels:
+    first: app
+spec:    #behavior of the replicaset 
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec: # defines the behavior of the pod
+      containers:
+      - name: ghee-container
+        image: suyashrokade78/retail:v1.0.0
+        ports:
+        - containerPort: 5656
