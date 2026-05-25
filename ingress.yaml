@@ -1,21 +1,26 @@
-apiVersion : networking.k8s.io/v1
-kind: Ingress 
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
 metadata:
   name: suyash-ingress
+
   annotations:
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "False"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
-    nginx.ingress.kubernetes.io/use-regex: "True"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+
 spec:
   ingressClassName: nginx
+
   rules:
     - http:
         paths:
-        - path: /nginx(/|$)(.*)
-          pathType: Prefix
-          backend:
-            service:
-              name: suyash-service
-              port:
-                number: 80
-            
+          - path: /nginx(/|$)(.*)
+            pathType: Prefix
+
+            backend:
+              service:
+                name: suyash-service
+
+                port:
+                  number: 5656
