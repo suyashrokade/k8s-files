@@ -1,35 +1,45 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: nginx
   labels:
     first: app
-spec:    #behavior of the replicaset 
+
+spec:
   replicas: 3
+
   selector:
     matchLabels:
       app: web
+
   template:
     metadata:
       labels:
         app: web
-    spec: # defines the behavior of the pod
+
+    spec:
       containers:
-      - name: nginx-container
-        image: nginx
-        ports:
-        - containerPort: 80
+        - name: nginx-container
+          image: nginx
+          ports:
+            - containerPort: 80
 
 ---
+
 apiVersion: v1
 kind: Service
+
 metadata:
-  name: my-service
+  name: suyash-service1
+
 spec:
   selector:
     app: web
-ports:
-  - protocol: TCP
-    port: 85
-    targetPort: 80
-type: ClusterIP 
+
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+  type: LoadBalancer
