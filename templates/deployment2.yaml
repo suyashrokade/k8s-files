@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.labels.app }}
+        app: {{ .Values.labels.app | default "web" }}
 
     spec:
       containers:
