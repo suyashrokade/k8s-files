@@ -10,13 +10,8 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /api/web
-      filters:
-        - type: URLRewrite
-          URLRewrite:
-            path:
-              type: ReplacePrefixMatch
-              ReplacePrefixMatch: /web
+            value: /
+      
       backendRefs:
         - name: ghee-service
           port: 5656

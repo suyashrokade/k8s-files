@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: suyash-configmap
+data:
+  DB_HOST: "Mongodb"
+  DB_PORT: "27017"
+  DB_USER: "admin"
+  APP_NAME: ghee
+  APP_PORT: "5656"

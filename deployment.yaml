@@ -24,6 +24,9 @@ spec:
           image: nginx
           ports:
             - containerPort: 80
+              envFrom:
+                - configMapRef:
+                    name: suyash-configmap
 
 ---
 

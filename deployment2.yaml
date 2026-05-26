@@ -22,8 +22,13 @@ spec:
       containers:
         - name: ghee-container
           image: suyashrokade78/ghee:v1.0.0
+
           ports:
             - containerPort: 5656
+
+          envFrom:
+            - configMapRef:
+                name: suyash-configmap
 
 ---
 
