@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: {{ .Release.name }}-dep 
+  name: {{ .Release.Name }}-dep
   labels:
     first: app
 
@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.labels.web}}
+        app: {{ .Values.labels.app }}
 
     spec:
       containers:
@@ -29,11 +29,11 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ .Values.configMap.name }}
+
             - secretRef:
                 name: {{ .Values.secret.name }}
 
 ---
-
 apiVersion: v1
 kind: Service
 

@@ -5,6 +5,6 @@ metadata:
   name: {{ .Values.configMap.name }}
 
 data:
-  {{- range $key, $value := .Values.configMap.data }}
-    {{ $key }}: "{{ $value }}"
-  {{- end }}
+{{- range $key, $value := .Values.configMap.data }}
+  {{ $key }}: "{{ $value }}"
+{{- end }}
