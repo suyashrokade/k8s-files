@@ -8,6 +8,7 @@ labels:
 
 container:
   name: ghee-container
+  image: suyashrokade78/ghee:v1.0.0
   port: 5656
 
 service:
@@ -19,7 +20,7 @@ service:
 configMap:
   name: suyash-configmap
   data:
-    DB_HOST: "Mongodb"
+    DB_HOST: "mongodb"
     DB_PORT: "27017"
     DB_USER: "admin"
     APP_NAME: "ghee"
@@ -29,5 +30,5 @@ secret:
   name: suyash-secret
   type: Opaque
   data:
-    DB_user: QURNSU4=
-    DB_password: UEFTU1dPUkQ=
+    DB_user: "QURNSU4="
+    DB_password: "UEFTU1dPUkQ="
