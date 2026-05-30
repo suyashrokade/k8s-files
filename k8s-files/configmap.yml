@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: suyash-configmap
+
+data:
+  APP_NAME: "Hospital-App"
+  APP_PORT: "5000"

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: suyash-deployment
+  labels:
+    first: app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: web
+
+  template:
+    metadata:
+      labels:
+        app: web
+
+    spec:
+      containers:
+      - name: suyash-container
+        image: suyashrokade78/hospital:v1.0.0
+
+        ports:
+        - containerPort: 5000
