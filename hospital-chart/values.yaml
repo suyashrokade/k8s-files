@@ -1,0 +1,25 @@
+replicaCount: 2
+
+container:
+  name: suyash-container1
+  image: suyashrokade78/hospital:v1.0.0
+  containerPort: 5000
+
+service:
+  name: suyash-service1
+  port: 5000
+  targetPort: 5000
+  type: LoadBalancer
+
+configMap:
+  name: suyash-config1
+  data:
+    APP_NAME: "Hospital-App"
+    APP_PORT: "5000"
+
+secret:
+  name: suyash-secret1
+  type: Opaque
+  data:
+    DB_USER: YWRtaW4=
+    DB_PASSWORD: YXRoYXJ2YUA3ODIz
