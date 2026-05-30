@@ -19,3 +19,12 @@ kubectl version --client
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz
 sudo mv eksctl /usr/local/bin
 eksctl version
+
+
+
+write this cmd: Change some info from this cmd
+eksctl create cluster --name <clustername> --version 1.31 --region <region code> --nodegroup-name <node group name> --node-type <instance type> --nodes 3 --nodes-min 3 --nodes-max 5 --managed
+
+node 2 ,2 ,3
+[change cluste-name,region,node-group-name,node-type,you can edit nodes,node-min,node-max]
+
