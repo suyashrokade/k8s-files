@@ -1,19 +1,15 @@
-FROM node:18
+FROM node:18-alpine
 
 WORKDIR /app
 
-COPY backend/package*.json ./backend/
+COPY package*.json ./
+COPY server/package*.json ./server/
 
-WORKDIR /app/backend
-
-RUN npm install
-
-WORKDIR /app
+RUN npm install --omit=dev && \
+    cd server && npm install --omit=dev
 
 COPY . .
 
-WORKDIR /app/backend
-
 EXPOSE 5000
 
-CMD ["node", "app.js"]
+CMD ["npm", "start"]
