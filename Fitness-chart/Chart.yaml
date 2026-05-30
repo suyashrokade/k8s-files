@@ -1,0 +1,6 @@
+apiVersion: v2
+name: fitness-chart
+description: Helm chart for Fitness Tracker Application
+type: application
+version: 0.1.0
+appVersion: "1.0"
